@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Scraper</string>
+    <string name="title_activity_maps">Map</string>
+
+    <string name="auth_failed">Authentication failed</string>
+    <string name="auth_success">Authentication successful!</string>
+
+    <string name="emailpassword_status_fmt"> Welcome, %s!</string>
+</resources>

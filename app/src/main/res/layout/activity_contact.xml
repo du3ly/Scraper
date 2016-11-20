@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_contact"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.duely.scraper.ContactActivity">
+
+
+    <TextView
+        android:text="Contact Us"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView5"
+        android:textSize="36sp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="56dp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:text="This app was designed and created by Duely Yung. It is a Final Project for CSC472: Mobile Application Development for Android at Depaul University. For more information, please contact me at: dyung@mail.depaul.edu"
+        android:layout_width="338dp"
+        android:layout_height="107dp"
+        android:id="@+id/textView6"
+        android:layout_marginTop="56dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        android:layout_marginStart="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:textAlignment="center" />
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:map="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="393dp"
+        android:layout_height="278dp"
+        tools:context="com.example.duely.scraper.MapsActivity"
+        android:layout_marginTop="48dp"
+        map:layout_constraintTop_toBottomOf="@+id/textView6"
+        android:layout_marginStart="16dp"
+        map:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginEnd="16dp"
+        map:layout_constraintRight_toRightOf="parent"
+        map:cameraZoom="18"
+        map:uiZoomControls="true"/>
+
+
+</android.support.constraint.ConstraintLayout>

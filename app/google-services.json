@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "30318023614",
+    "firebase_url": "https://scraper-c70e7.firebaseio.com",
+    "project_id": "scraper-c70e7",
+    "storage_bucket": "scraper-c70e7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:30318023614:android:0c43cccbd4f19ece",
+        "android_client_info": {
+          "package_name": "com.example.duely.scraper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "30318023614-njtrbu6qktckkkt3ek68lt236he8jkpd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.duely.scraper",
+            "certificate_hash": "04F268CA13403F3188EF6EAFA96A9E6CF93BFDD8"
+          }
+        },
+        {
+          "client_id": "30318023614-b3eeu5q2lbsua6kdfrdqqimj4l6pl785.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEOybyP2ruad6k15RXQljWHrih69gIy1A"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "30318023614-b3eeu5q2lbsua6kdfrdqqimj4l6pl785.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
