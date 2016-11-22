@@ -106,19 +106,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         mAuth.signOut();
     }
 
-    @Override
-    public void onClick(View v) {
-        int i = v.getId();
-        if (i == R.id.buttonSignOut) {
-            signOut();
-        }
-
-        if (i == R.id.buttonSearch) {
-            tickerName = inputTicker.getText().toString().toUpperCase();
-            new getStockData().execute("https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quotes%20where%20symbol%20in%20(%22" + tickerName + "%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=");
-        }
-    }
-
+    // Handles the operation of opening up an URL connection, then retrieve the JSON data
     protected class getStockData extends AsyncTask<String, String, JSONObject> {
         @Override
         protected JSONObject doInBackground(String... params) {
@@ -160,9 +148,10 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                     String change = response.getJSONObject("query").getJSONObject("results").getJSONObject("quote").getString("Change");
                     String PrevClose = response.getJSONObject("query").getJSONObject("results").getJSONObject("quote").getString("PreviousClose");
                     Float todayValue = Float.parseFloat(change) + Float.parseFloat(PrevClose);
+                    Double todayValue_2d = Math.round(todayValue*100.0)/100.0;
 
                     mStockName.setText(response.getJSONObject("query").getJSONObject("results").getJSONObject("quote").getString("symbol"));
-                    mTodayClose.setText(todayValue.toString());
+                    mTodayClose.setText(todayValue_2d.toString());
                     mPrevClose.setText(response.getJSONObject("query").getJSONObject("results").getJSONObject("quote").getString("PreviousClose"));
                     mOpen.setText(response.getJSONObject("query").getJSONObject("results").getJSONObject("quote").getString("Open"));
                     mLow.setText(response.getJSONObject("query").getJSONObject("results").getJSONObject("quote").getString("DaysLow"));
@@ -174,6 +163,22 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                     Toast.makeText(HomeActivity.this,"Invalid Ticker",Toast.LENGTH_SHORT).show();
                 }
             }
+        }
+    }
+
+    @Override
+    public void onClick(View v) {
+        int i = v.getId();
+
+        if (i == R.id.buttonSignOut) {
+            signOut();
+        }
+
+        /** This handles the stock ticker search function. It will grab the text that the user inputs into the EditText, then it will
+         * be appended and concatenated to the Yahoo URL. Afterwards, the Yahoo API will take care of retrieving information for that ticker. **/
+        if (i == R.id.buttonSearch) {
+            tickerName = inputTicker.getText().toString().toUpperCase();
+            new getStockData().execute("https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quotes%20where%20symbol%20in%20(%22" + tickerName + "%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=");
         }
     }
 }
