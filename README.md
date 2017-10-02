@@ -13,6 +13,8 @@ API features that were implemented in this project:
 -	Google Map API
 -	Firebase
 
+Full detailed documentation is stored in the users private repository (not available to the public).
+
 ## Screenshot
 
 ![ScreenShot](https://github.com/du3ly/Scraper/blob/master/images/Picture1.png)
